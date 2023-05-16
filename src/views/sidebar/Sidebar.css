@@ -1,0 +1,98 @@
+.sidebar {
+    position: absolute;
+    text-align: center;
+    width: 252px;
+    height: 1024px;
+    left: 0px;
+    top: 0px;
+    color: white;
+    background: #131313;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Sulphur Point';
+    font-style: normal;
+}
+
+
+
+
+
+.menu-group-1 {
+    position: absolute;
+    width: 100%;
+    top: 150px;
+}
+
+.menu-group-2 {
+    position: absolute;
+    width: 100%;
+    top: 350px;
+}
+
+.menu-group-3 {
+    position: absolute;
+    width: 100%;
+    bottom: 150px;
+}
+
+
+.menu-btn {
+    width: 100%;
+    text-align: left;
+    background: none;
+    color: #f8f8f8;
+    border: none;
+    font-size: 18px;
+    height: 40px;
+    padding-left: 60px;
+    font-family: 'Sulphur Point';
+    font-style: normal;
+}
+
+.menu-btn-active {
+    border-left: 5px solid #D4D4FC;
+    color: #D4D4FC;
+    padding-left: 55px;
+}
+
+
+.free-trial-window {
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    top: 500px;
+}
+
+.free-trial-inner-box {
+    width: 60%;
+    margin-left: 12%;
+    border: 1px solid #D4D4FC;
+    border-radius: 24px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    padding: 20px;
+}
+
+
+
+.trial-text {
+    text-align: left;
+    color: #D4D4FC;
+    font-family: 'Sulphur Point';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.upgrade-btn {
+    color: white;
+    /* position: absolute; */
+    width: 146px;
+    height: 40px;
+    /* left: 53px;
+    top: 824px; */
+
+    background: rgba(212, 212, 252, 0.12);
+    border: 1px solid #D4D4FC;
+    border-radius: 10px;
+}

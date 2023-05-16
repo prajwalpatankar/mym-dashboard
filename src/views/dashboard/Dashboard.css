@@ -1,0 +1,103 @@
+.dashboard {
+    position: absolute;
+    width: 440px;
+    height: 1024px;
+    left: 252px;
+    top: 0px;
+    background-color: #F8F8F8;
+    font-family: 'Sulphur Point';
+}
+
+.dashboard-title {
+    margin-left: 15%;
+}
+
+.statistics {
+    margin-top: 25%;
+}
+
+.stats-box {
+    border-bottom: 3px solid #ECECEC;
+    width: 72%;
+    padding-bottom: 20px;
+    margin-left: 14%;
+}
+
+.stat-title {
+    width: 100%;
+    font-size: 18px;
+    color: #94979A;
+    line-height: 16px;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 25px;
+    width: 80%;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.stat-trend {
+    height: 28px;
+    border-radius: 8px;
+    width: 22%;
+    margin: 0;
+}
+
+.stat-red {
+    background-color: #DC3545;    
+    display: flex;
+    align-items: center;
+}
+
+.stat-green {
+    background-color: #DDF6DE;
+    display: flex;
+    align-items: center;
+}
+
+.legend {
+    margin-top: -25px;
+    display: flex;
+    /* margin-left: 5%; */
+}
+
+.legend-container {
+    margin: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.legend-color-green {
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 20px;
+    background-color: #C2ECC1;
+}
+
+.legend-color-black {
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 20px;
+    background-color: #1F1F1F;
+}
+
+.legend-color-purple {
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 20px;
+    background-color: #C5C7F6;
+}
+
+
