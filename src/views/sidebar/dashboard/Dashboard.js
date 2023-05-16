@@ -27,6 +27,7 @@ const Dashboard = (props) => {
       {
         data: dataArr,
         backgroundColor: ['#C2ECC1', '#1F1F1F', '#C5C7F6'],
+        hoverBackgroundColor: ['#3F3F3F', '#B2DCB1', '#B5B7E6'],
       },
     ],
   };

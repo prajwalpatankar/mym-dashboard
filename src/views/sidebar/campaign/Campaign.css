@@ -1,0 +1,13 @@
+.campaign {
+    position: absolute;
+    width: 440px;
+    height: 100%;
+    left: 252px;
+    top: 0px;
+    background-color: #F8F8F8;
+    font-family: 'Sulphur Point';
+}
+
+.campaign-title {
+    margin-left: 15%;
+}

@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './MainScreen.css'
 import { Calendar, ArrowSquareDown, I3Square } from 'iconsax-react';
 
+import Chart from 'chart.js/auto';
+import DoughnutGraph from './graphs/DoughnutGraph';
+import SpiderGraph from './graphs/SpiderGraph';
 
 const MainScreen = (props) => {
 
@@ -22,43 +25,43 @@ const MainScreen = (props) => {
         })
     }, stats)
 
-    const activityTypes = {
-        1: 'message',
-        2: 'connection request',
-        3: 'task'
-    }
-
+    const activityTypes = [
+        'message',
+        'connection request',
+        'Upcoming Task -'
+    ]
     const [activities, setActivities] = useState([])
+
 
     useEffect(() => {
         setActivities(
             [
                 {
-                    type: 1,
+                    type: 0,
                     actor: 'Alex Morgan',
                     icon: '/playground_assets/ellipse51201-q5pp-200h.png',
                     description: '',
                 },
                 {
-                    type: 2,
+                    type: 1,
                     actor: 'Mujo Prosper',
                     icon: '/playground_assets/ellipse61202-kdgs-200h.png',
                     description: '',
                 },
                 {
-                    type: 3,
+                    type: 2,
                     actor: 'Create a campaign for designers',
                     icon: '/playground_assets/ellipse51201-q5pp-200h.png',
                     description: '02/04/2023',
                 },
                 {
-                    type: 4,
+                    type: 2,
                     actor: 'Create a campaign for developers',
                     icon: '',
                     description: '02/24/2023',
                 },
                 {
-                    type: 1,
+                    type: 0,
                     actor: 'Alex Morgan',
                     icon: '/playground_assets/ellipse51201-q5pp-200h.png',
                     description: '',
@@ -98,14 +101,18 @@ const MainScreen = (props) => {
                         {stats.profileViews}
                     </div>
                 </div>
-                <div>
-                    Graph1
+
+            </div>
+            <br />
+            <div className='main-graphs'>
+                <div className='doughnut-graph'>
+                    <DoughnutGraph />
                 </div>
-                <div>
-                    Graph2
+                <div className='spider-graph'>
+                    <SpiderGraph />
                 </div>
             </div>
-            <br /><br /><br /><br /><br />
+            <br />
             <div className='recent-activity-titlebar'>
                 <h3 className='recent-activity-title'>Recent Activity</h3>
                 <p className='recent-activity-calendar'> Last 24h <ArrowSquareDown /></p>
@@ -113,27 +120,27 @@ const MainScreen = (props) => {
             <div className='activity-list'>
                 {activities.map((activity, index) => (
                     <div className='activity-list-item'>
-                        {activity.type === 1 ?
+                        {activity.type === 0 ?
                             <div className='activity-list-item-inner'>
                                 <div className='activity-item-img' >
                                     <img src={activity.icon} />
                                 </div>
-                                <b>{activity.actor}</b>&nbsp;sent you a&nbsp;<b>message</b>.
+                                <b>{activity.actor}</b>&nbsp;sent you a&nbsp;<b>{activityTypes[activity.type]}</b>.
                             </div>
                             :
-                            activity.type === 2 ?
+                            activity.type === 1 ?
                                 <div className='activity-list-item-inner'>
                                     <div className='activity-item-img' >
                                         <img src={activity.icon} />
                                     </div>
-                                    <b>{activity.actor}</b>&nbsp;sent you a&nbsp;<b>connection request</b>.
+                                    <b>{activity.actor}</b>&nbsp;sent you a&nbsp;<b>{activityTypes[activity.type]}</b>.
                                 </div>
                                 :
                                 <div className='activity-list-item-inner'>
                                     <div className='activity-item-img' >
                                         <I3Square size="20" />
                                     </div>
-                                    Upcoming Task -&nbsp;<b>{activity.actor}</b>&nbsp;due on&nbsp;<b>{activity.description}</b>.
+                                    {activityTypes[activity.type]}&nbsp;<b>{activity.actor}</b>&nbsp;due on&nbsp;<b>{activity.description}</b>.
                                 </div>
                         }
                     </div>

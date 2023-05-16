@@ -11,7 +11,6 @@ const Frame = (props) => {
     return (
         <div>
             <Sidebar />
-            <Dashboard />
             <Navbar />
             <MainScreen />
         </div>

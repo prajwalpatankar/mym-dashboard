@@ -1,7 +1,7 @@
 .navbar {
     position: absolute;
     width: 440px;
-    height: 200px;
+    height: 15%;
     left: 692px;
     top: 0px;
 }
@@ -30,7 +30,7 @@
 .profile-details {
     position: absolute;
     width: 500px;
-    height: 145px;
+    /* height: 145px; */
     left: 501px;
     top: 51px;
 }
@@ -69,5 +69,5 @@
     border: none;
     border-radius: 5px;
     width: 20px;
-    height: auto;
+    /* height: auto; */
 }
