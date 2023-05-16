@@ -1,6 +1,5 @@
 import React from 'react'
 import Sidebar from './sidebar/Sidebar';
-import Dashboard from './dashboard/Dashboard';
 import Navbar from './Navbar';
 import MainScreen from './mainScreen/MainScreen';
 

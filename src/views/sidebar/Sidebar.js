@@ -71,7 +71,8 @@ const Sidebar = (props) => {
     <div className='component-container'>
       <div className='sidebar'>
         <div className='main-logo'>
-          <h3>Realply</h3>
+          <img src='/playground_assets/logo.png' alt='logo' className='logo'/>
+          <p>Realply</p>
         </div>
 
         <div className='menu-group-1'>

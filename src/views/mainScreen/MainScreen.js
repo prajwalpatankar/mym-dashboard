@@ -1,8 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import './MainScreen.css'
 import { Calendar, ArrowSquareDown, I3Square } from 'iconsax-react';
-
-import Chart from 'chart.js/auto';
 import DoughnutGraph from './graphs/DoughnutGraph';
 import SpiderGraph from './graphs/SpiderGraph';
 
@@ -23,7 +21,7 @@ const MainScreen = (props) => {
             pendingInvitations: 12,
             profileViews: 2891,
         })
-    }, stats)
+    }, [stats])
 
     const activityTypes = [
         'message',
@@ -67,7 +65,7 @@ const MainScreen = (props) => {
                     description: '',
                 },
             ])
-    }, activities)
+    }, [activities])
 
 
     return (
@@ -123,7 +121,7 @@ const MainScreen = (props) => {
                         {activity.type === 0 ?
                             <div className='activity-list-item-inner'>
                                 <div className='activity-item-img' >
-                                    <img src={activity.icon} />
+                                    <img src={activity.icon} alt='profile'/>
                                 </div>
                                 <b>{activity.actor}</b>&nbsp;sent you a&nbsp;<b>{activityTypes[activity.type]}</b>.
                             </div>
@@ -131,7 +129,7 @@ const MainScreen = (props) => {
                             activity.type === 1 ?
                                 <div className='activity-list-item-inner'>
                                     <div className='activity-item-img' >
-                                        <img src={activity.icon} />
+                                        <img src={activity.icon} alt='profile' />
                                     </div>
                                     <b>{activity.actor}</b>&nbsp;sent you a&nbsp;<b>{activityTypes[activity.type]}</b>.
                                 </div>
