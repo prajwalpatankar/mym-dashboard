@@ -1,5 +1,9 @@
 
 
+.recent-activities {
+    height: 100%;
+    margin-top: 5%;
+}
 
 .recent-activity-titlebar {
     display: flex;

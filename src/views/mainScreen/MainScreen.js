@@ -5,6 +5,7 @@ import DoughnutGraph from './graphs/DoughnutGraph';
 import SpiderGraph from './graphs/SpiderGraph';
 import { Dropdown } from 'antd';
 import RecentActivity from './recentActivity/RecentActivity';
+import { Col, Container, Row } from 'react-bootstrap';
 
 
 const MainScreen = (props) => {
@@ -24,19 +25,6 @@ const MainScreen = (props) => {
             campaign2: 12234,
         })
     }, [stats])
-
-    const [showDatePicker, setShowDatePicker] = useState(false);
-    const [selectedDate, setSelectedDate] = useState(null);
-
-    const handleArrowClick = () => {
-        setShowDatePicker(!showDatePicker);
-    };
-
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
-        // Additional logic if needed
-    };
-
 
 
     const [dateRange, setDateRange] = useState('Mar 10 - Apr 10');
@@ -128,65 +116,73 @@ const MainScreen = (props) => {
 
             </div>
             <br />
-            <div className='main-graphs'>
-                <div className='doughnut-graph'>
-                    <DoughnutGraph />
-                </div>
-                <div className='spider-graph'>
-                    <SpiderGraph />
-                </div>
-            </div>
-            <div className='graph-legends'>
-                <div className='legend-container'>
-                    <div>
-                        <div className='legend-text'>
-                            <p className='legend-black'>&nbsp;</p>
-                            Invitations Sent
+            <Container >
+                <Row>
+                    <Col lg={1} />
+                    <Col lg={4} style={{ maxHeight: '300px' }}>
+
+                        <DoughnutGraph /><br />
+                        <div className='legend-container'>
+                            <div>
+                                <div className='legend-text'>
+                                    <p className='legend-black'>&nbsp;</p>
+                                    Invitations Sent
+                                </div>
+                                <div className='legend-number'>
+                                    {stats.invitationsSent}
+                                </div>
+                            </div>
+                            <div>
+                                <div className='legend-text'>
+                                    <p className='legend-green'>&nbsp;</p>
+                                    Pending Invitations
+                                </div>
+                                <div className='legend-number'>
+                                    {stats.pendingInvitations}
+                                </div>
+                            </div>
+                            <div>
+                                <div className='legend-text'>
+                                    <p className='legend-purple'>&nbsp;</p>
+                                    Profile Views
+                                </div>
+                                <div className='legend-number'>
+                                    {stats.profileViews}
+                                </div>
+                            </div>
                         </div>
-                        <div className='legend-number'>
-                            {stats.invitationsSent}
+
+                    </Col>
+                    <Col lg={2} />
+                    <Col lg={4} style={{ maxHeight: '300px' }}>
+                        <SpiderGraph /><br />
+                        <div className='legend-container'>
+                            <div>
+                                <div className='legend-text'>
+                                    <p className='legend-green-hollow'>&nbsp;</p>
+                                    Campaign 1
+                                </div>
+                                <div className='legend-number'>
+                                    {stats.campaign1}
+                                </div>
+                            </div>
+                            <div>
+                                <div className='legend-text'>
+                                    <p className='legend-purple-hollow'>&nbsp;</p>
+                                    Campaign 2
+                                </div>
+                                <div className='legend-number'>
+                                    {stats.campaign2}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div className='legend-text'>
-                            <p className='legend-green'>&nbsp;</p>
-                            Pending Invitations
-                        </div>
-                        <div className='legend-number'>
-                            {stats.pendingInvitations}
-                        </div>
-                    </div>
-                    <div>
-                        <div className='legend-text'>
-                            <p className='legend-purple'>&nbsp;</p>
-                            Profile Views
-                        </div>
-                        <div className='legend-number'>
-                            {stats.profileViews}
-                        </div>
-                    </div>
-                </div>
-                <div className='legend-container'>
-                    <div>
-                        <div className='legend-text'>
-                            <p className='legend-green-hollow'>&nbsp;</p>
-                            Campaign 1
-                        </div>
-                        <div className='legend-number'>
-                            {stats.campaign1}
-                        </div>
-                    </div>
-                    <div>
-                        <div className='legend-text'>
-                            <p className='legend-purple-hollow'>&nbsp;</p>
-                            Campaign 2
-                        </div>
-                        <div className='legend-number'>
-                            {stats.campaign2}
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                    <Col lg={1} />
+                </Row>
+                <Row>
+
+                </Row>
+            </Container> <br />
             <br />
             <RecentActivity />
         </div>

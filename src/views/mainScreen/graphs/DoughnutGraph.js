@@ -28,7 +28,7 @@ const DoughnutGraph = (props) => {
     }
 
     return (
-        <Doughnut data={doughnutData} options={options} style={{height: '250px'}} />
+        <Doughnut data={doughnutData} options={options} style={{maxHeight: '270px', maxWidth:'270px'}} />
     )
 }
 

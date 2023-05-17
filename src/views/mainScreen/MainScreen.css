@@ -61,7 +61,7 @@
 
 
 
-
+/* 
 .main-graphs {
     text-align: left;
     width: 20%;
@@ -77,7 +77,7 @@
 
 .spider-graph {
     margin-left: 25%;
-}
+} */
 
 
 .graph-legends {
@@ -89,8 +89,10 @@
 .legend-container {
     display: flex;
     align-items: center;
-    width: 50%;
-    padding-left: 13%;
+    justify-content: center;
+    /* width: 50%; */
+    width: 100%;
+    /* padding-left: 13%; */
     height: 20px;
     margin-bottom: 0px;
     margin-top: 0px;
@@ -101,10 +103,15 @@
     font-style: normal;
     font-weight: 500;
     font-size: 8.64865px;
-    display: flex;
-    align-items: center;
     width: 100px;
     color: rgba(0, 0, 0, 0.38);
+    display: flex;
+    align-items: center;
+
+}
+
+.legend-text p {
+    margin-top: 10px;
 }
 
 .legend-black {

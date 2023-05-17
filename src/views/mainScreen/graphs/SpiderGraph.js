@@ -59,7 +59,7 @@ const SpiderGraph = (props) => {
         };
     }, []);
 
-    return <canvas ref={chartRef} style={{height: '320px'}} />;
+    return <canvas ref={chartRef} style={{maxHeight: '270px', maxWidth:'270px'}} />;
 };
 
 export default SpiderGraph;

@@ -97,7 +97,7 @@ const RecentActivity = (props) => {
 
 
     return (
-        <div>
+        <div className='recent-activities'>
             <div className='recent-activity-titlebar'>
                 <h3 className='recent-activity-title'>Recent Activity</h3>
                 <p className='recent-activity-calendar'> {activityPeriod} &nbsp;
