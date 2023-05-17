@@ -1,4 +1,4 @@
-# Static Dashboard for Realpy
+# Static Dashboard for Realply
 
 The project can be viewd live [here](https://mym-dashboard.vercel.app/) 
 
