@@ -1,6 +1,5 @@
 .dashboard {
     position: absolute;
-    /* width: 440px; */
     width: 29%;
     height: 100%;
     left: 17%;
@@ -67,13 +66,13 @@
 }
 
 .legend {
-    margin-top: -25px;
+    margin-top: 10px;
     display: flex;
-    /* margin-left: 5%; */
+    width: 100%;
 }
 
 .legend-container {
-    margin: 30px;
+    width: 100% !important;
     display: flex;
     align-items: center;
 }

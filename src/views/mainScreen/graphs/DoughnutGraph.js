@@ -7,7 +7,7 @@ import { Doughnut } from 'react-chartjs-2';
 const DoughnutGraph = (props) => {
 
     const doughnutData = {
-        // labels: ['Invitations sent', 'Pending invitations', 'Profile views'],
+        labels: ['Invitations sent', 'Pending invitations', 'Profile views'],
         datasets: [
             {
                 data: [300, 50, 100],
@@ -20,10 +20,15 @@ const DoughnutGraph = (props) => {
     const options = {
         responsive: true,
         maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false,
+            },
+        },
     }
 
     return (
-        <Doughnut data={doughnutData} options={options} />
+        <Doughnut data={doughnutData} options={options} style={{height: '250px'}} />
     )
 }
 

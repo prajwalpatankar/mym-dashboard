@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './MainScreen.css'
-import { Calendar, ArrowSquareDown, I3Square } from 'iconsax-react';
+import { Calendar, ArrowSquareDown } from 'iconsax-react';
 import DoughnutGraph from './graphs/DoughnutGraph';
 import SpiderGraph from './graphs/SpiderGraph';
+import { Dropdown } from 'antd';
+import RecentActivity from './recentActivity/RecentActivity';
+
 
 const MainScreen = (props) => {
-
-    const [dateRange, setDateRange] = useState('Mar 10 - Apr 10');
-
 
     const [stats, setStats] = useState({
         invitationsSent: 0,
@@ -25,56 +25,80 @@ const MainScreen = (props) => {
         })
     }, [stats])
 
-    const activityTypes = [
-        'message',
-        'connection request',
-        'Upcoming Task -'
-    ]
-    const [activities, setActivities] = useState([])
+    const [showDatePicker, setShowDatePicker] = useState(false);
+    const [selectedDate, setSelectedDate] = useState(null);
+
+    const handleArrowClick = () => {
+        setShowDatePicker(!showDatePicker);
+    };
+
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+        // Additional logic if needed
+    };
 
 
-    useEffect(() => {
-        setActivities(
-            [
-                {
-                    type: 0,
-                    actor: 'Alex Morgan',
-                    icon: '/playground_assets/ellipse51201-q5pp-200h.png',
-                    description: '',
-                },
-                {
-                    type: 1,
-                    actor: 'Mujo Prosper',
-                    icon: '/playground_assets/ellipse61202-kdgs-200h.png',
-                    description: '',
-                },
-                {
-                    type: 2,
-                    actor: 'Create a campaign for designers',
-                    icon: '/playground_assets/ellipse51201-q5pp-200h.png',
-                    description: '02/04/2023',
-                },
-                {
-                    type: 2,
-                    actor: 'Create a campaign for developers',
-                    icon: '',
-                    description: '02/24/2023',
-                },
-                {
-                    type: 0,
-                    actor: 'Alex Morgan',
-                    icon: '/playground_assets/ellipse51201-q5pp-200h.png',
-                    description: '',
-                },
-            ])
-    }, [activities])
 
+    const [dateRange, setDateRange] = useState('Mar 10 - Apr 10');
+
+    const getGraphDetails = (period) => {
+        //Some Logic / Request to get activity details of 'period'
+        setDateRange(period);
+    }
+
+    const items = [
+        {
+            label: (
+                <div onClick={() => getGraphDetails('Mar 10 - Apr 10')}>
+                    Mar 10 - Apr 10
+                </div>
+            ),
+            key: '0',
+        },
+        {
+            label: (
+                <div onClick={() => getGraphDetails('Feb 10 - Mar 10')}>
+                    Feb 10 - Mar 10
+                </div>
+            ),
+            key: '1',
+        },
+        {
+            label: (
+                <div onClick={() => getGraphDetails('Jan 10 - Feb 10')}>
+                    Jan 10 - Feb 10
+                </div>
+            ),
+            key: '2',
+        },
+        {
+            label: (
+                <div onClick={() => getGraphDetails('Dec 10 - Jan 10')}>
+                    Dec 10 - Jan 10
+                </div>
+            ),
+            key: '3',
+        },
+    ];
 
     return (
         <div className='main-screen'>
             <div className='main-titlebar'>
                 <h3 className='main-titlebar-title'>Campaign Analytics</h3>
-                <p className='main-titlebar-calendar'><Calendar /> &nbsp;{dateRange}&nbsp; <ArrowSquareDown /></p>
+                {/* <p className='main-titlebar-calendar'><Calendar /> &nbsp;{dateRange}&nbsp; <ArrowSquareDown /></p> */}
+
+                <p className='main-titlebar-calendar'><Calendar /> &nbsp;{dateRange}&nbsp;
+                    <Dropdown
+                        menu={{
+                            items,
+                        }}
+                        trigger={['click']}
+                    >
+                        <div onClick={(e) => e.preventDefault()}>
+                            <ArrowSquareDown />
+                        </div>
+                    </Dropdown>
+                </p>
             </div>
             <div className='main-stats'>
                 <div className='main-stat-item'>
@@ -164,39 +188,7 @@ const MainScreen = (props) => {
                 </div>
             </div>
             <br />
-            <div className='recent-activity-titlebar'>
-                <h3 className='recent-activity-title'>Recent Activity</h3>
-                <p className='recent-activity-calendar'> Last 24h <ArrowSquareDown /></p>
-            </div>
-            <div className='activity-list'>
-                {activities.map((activity, index) => (
-                    <div className='activity-list-item'>
-                        {activity.type === 0 ?
-                            <div className='activity-list-item-inner'>
-                                <div className='activity-item-img' >
-                                    <img src={activity.icon} alt='profile' />
-                                </div>
-                                <b>{activity.actor}</b>&nbsp;sent you a&nbsp;<b>{activityTypes[activity.type]}</b>.
-                            </div>
-                            :
-                            activity.type === 1 ?
-                                <div className='activity-list-item-inner'>
-                                    <div className='activity-item-img' >
-                                        <img src={activity.icon} alt='profile' />
-                                    </div>
-                                    <b>{activity.actor}</b>&nbsp;sent you a&nbsp;<b>{activityTypes[activity.type]}</b>.
-                                </div>
-                                :
-                                <div className='activity-list-item-inner'>
-                                    <div className='activity-item-img' >
-                                        <I3Square size="20" />
-                                    </div>
-                                    {activityTypes[activity.type]}&nbsp;<b>{activity.actor}</b>&nbsp;due on&nbsp;<b>{activity.description}</b>.
-                                </div>
-                        }
-                    </div>
-                ))}
-            </div>
+            <RecentActivity />
         </div>
     )
 }

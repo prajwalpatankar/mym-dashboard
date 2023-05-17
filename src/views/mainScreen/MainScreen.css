@@ -31,7 +31,7 @@
     align-items: center;
     padding-left: 5px;
     padding-right: 5px;
-    width: 187px;
+    /* width: 187px; */
     height: 32px;
     border-radius: 8px;
 }
@@ -68,29 +68,32 @@
     display: flex;
     align-items: center;
     height: 37%;
+    margin-top: -10px;
 }
 
 .doughnut-graph {
-    margin-left: 50%;
+    margin-left: 25%;
 }
 
 .spider-graph {
-    margin-left: 50%;
+    margin-left: 25%;
 }
 
 
 .graph-legends {
     display: flex;
     align-items: center;
-    justify-content: center;
-    /* text-align: center; */
+    height: 20px;
 }
 
 .legend-container {
     display: flex;
     align-items: center;
     width: 50%;
-    padding-left: 15%;
+    padding-left: 13%;
+    height: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .legend-text {
@@ -152,98 +155,12 @@
 }
 
 .legend-number {
-    /* font-family: 'Roboto'; */
+    font-family: sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 11.5315px;
     margin-left: 16px;
 }
-
-
-
-
-.recent-activity-titlebar {
-    display: flex;
-    align-items: center;
-}
-
-.recent-activity-title {
-    margin-left: 60px;
-    font-family: 'Sulphur Point';
-    font-style: normal;
-    font-size: 28px;
-    line-height: 30px;
-}
-
-.recent-activity-calendar {
-    margin-left: 25%;
-    right: 60px;
-    background-color: rgba(236, 236, 236, 0.5);
-    display: flex;
-    align-items: center;
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 112px;
-    height: 32px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.activity-list {
-    width: 100%;
-    height: 27%;
-    overflow-y: scroll;
-}
-
-
-/* Customize the scrollbar */
-.activity-list::-webkit-scrollbar {
-    width: 8px;
-    /* Set the width of the scrollbar */
-}
-
-.activity-list::-webkit-scrollbar-track {
-    background-color: #f3f3f3;
-    /* Set the background color of the track */
-}
-
-.activity-list::-webkit-scrollbar-thumb {
-    background-color: rgba(236, 236, 236, 0.5);
-    border: 1px solid rgba(19, 19, 19, 0.4);
-    border-radius: 3.5px;
-}
-
-.activity-list::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-    /* Set the color of the scrollbar thumb on hover */
-}
-
-.activity-list-item {
-    width: 85%;
-    margin-top: 18px;
-    padding-bottom: 18px;
-    margin-left: 60px;
-    /* height: 60px; */
-    border-bottom: 2px solid #ECECEC;
-
-}
-
-.activity-list-item-inner {
-    display: flex;
-    align-items: center;
-}
-
-.activity-item-img {
-    margin-right: 2%;
-    background-color: rgba(236, 236, 236, 0.5);
-    width: 36px;
-    height: 36px;
-    border-radius: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 
 
 @media (max-width: 1200px) {

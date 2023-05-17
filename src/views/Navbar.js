@@ -23,17 +23,17 @@ const Navbar = (props) => {
     const items = [
         {
             label: (
-                <a>
+                <div>
                     Edit Profile
-                </a>
+                </div>
             ),
             key: '0',
         },
         {
             label: (
-                <a>
+                <div>
                     Switch Account
-                </a>
+                </div>
             ),
             key: '1',
         },
@@ -42,9 +42,9 @@ const Navbar = (props) => {
         },
         {
             label: (
-                <a>
+                <div>
                     Log Out
-                </a>
+                </div>
             ),
             key: '2',
         },
@@ -87,9 +87,9 @@ const Navbar = (props) => {
                         }}
                         trigger={['click']}
                     >
-                        <a onClick={(e) => e.preventDefault()}>
+                        <div onClick={(e) => e.preventDefault()}>
                             <button className='profile-actions'><ArrowSquareDown size="20" /></button>
-                        </a>
+                        </div>
                     </Dropdown>
 
                 </div>

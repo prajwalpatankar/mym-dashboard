@@ -1,13 +1,21 @@
 .messages {
     position: absolute;
-    width: 440px;
+    width: 29%;
     height: 100%;
-    left: 252px;
+    left: 17%;
     top: 0px;
     background-color: #F8F8F8;
     font-family: 'Sulphur Point';
 }
 
 .messages-title {
+    top: 6%;
     margin-left: 15%;
+    font-size: 36px;
+}
+
+.message-card {
+    width: 96%;
+    margin-left: 2%;
+    margin-bottom: 1%;
 }
