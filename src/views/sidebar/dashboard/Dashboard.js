@@ -38,6 +38,7 @@ const Dashboard = (props) => {
   // bar graph options
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       y: {
         beginAtZero: true,
@@ -120,14 +121,9 @@ const Dashboard = (props) => {
       </div>
       <br /><br />
       <div className='bar-graph'>
-        <Bar data={data} options={options} />
+        <Bar data={data} options={options} style={{height: '353px'}}/>
       </div>
       <div className='legend'>
-        {/* <span className='legend-container'>
-          <p className='legend-color-green'>&nbsp;</p> Connections
-          <p className='legend-color-black'>&nbsp;</p> Follows
-          <p className='legend-color-purple'>&nbsp;</p> Connect Invites
-        </span> */}
         <Container>
           <Row >
             <Col lg={1} />
@@ -137,10 +133,9 @@ const Dashboard = (props) => {
             <Col lg={3} className='legend-container'>
               <p className='legend-color-black'>&nbsp;</p> Follows
             </Col>
-            <Col lg={4} className='legend-container'>
+            <Col lg={5} className='legend-container'>
               <p className='legend-color-purple'>&nbsp;</p> Connect Invites
             </Col>
-            <Col lg={1} />
           </Row>
         </Container>
       </div>

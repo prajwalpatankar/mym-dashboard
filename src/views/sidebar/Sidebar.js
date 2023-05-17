@@ -208,7 +208,7 @@ const Sidebar = (props) => {
               :
               <div className='free-trial-window'>
                 <div className='free-trial-inner-box'>
-                  <h3>Your free trial is about to end in </h3> <h2>{userDetails.daysLeft} days</h2>
+                  <h3>Your free trial is about to end in </h3> <h2>{userDetails.daysLeft} days.</h2>
                   <p className='trial-text'>You will not be billed during your free trial. <br /><br />To keep your projects running after the trial end, upgrade to a paid option.</p>
                   <button className='upgrade-btn' onClick={() => handleUpgrade()} >Upgrade</button>
                 </div>

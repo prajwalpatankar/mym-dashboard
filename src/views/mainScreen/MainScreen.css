@@ -1,13 +1,13 @@
 .main-screen {
     position: absolute;
     width: 53%;
-    height: 85%;
+    height: 80%;
     /* left: 692px; */
     left: 46%;
-    top: 15%;
+    top: 20%;
     font-family: 'Sulphur Point';
     font-style: normal;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 .main-titlebar {
@@ -16,11 +16,12 @@
 }
 
 .main-titlebar-title {
-    margin-left: 60px;
+    margin-left: 40px;
     font-family: 'Sulphur Point';
     font-style: normal;
     font-size: 28px;
     line-height: 30px;
+    font-weight: 600;
 }
 
 .main-titlebar-calendar {
@@ -196,6 +197,7 @@
 
 @media (max-width: 990px) {
     .main-screen {
-      overflow-x: auto;
+        display: block;
+        overflow-y: auto;
     }
-  }
+}
