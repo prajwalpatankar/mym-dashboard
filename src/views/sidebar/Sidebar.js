@@ -72,6 +72,10 @@ const Sidebar = (props) => {
     message.info("Upgrade plans not available yet!")
   }
 
+
+
+  // dynamic MenuBar
+
   return (
     <div className='component-container'>
       <div className='sidebar'>
