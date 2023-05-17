@@ -93,6 +93,7 @@ const Dashboard = (props) => {
             }
           </div>
         </div>
+        <hr className='stat-seperator' />
         <div className='stats-box'>
           <p className='stat-title'>Followers</p>
           <div className='stat-row'>
@@ -104,6 +105,7 @@ const Dashboard = (props) => {
             }
           </div>
         </div>
+        <hr className='stat-seperator' />
         <div className='stats-box'>
           <p className='stat-title'>Connect Invites</p>
           <div className='stat-row'>

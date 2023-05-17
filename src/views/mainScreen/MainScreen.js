@@ -90,7 +90,7 @@ const MainScreen = (props) => {
 
     return (
         <div className={`main-screen${smallWindow ? '-small' : ''} `}>
-            <div className='main-titlebar'>
+            {/* <div className='main-titlebar'>
                 <h3 className='main-titlebar-title'>Campaign Analytics</h3>
                 <p className='main-titlebar-calendar'><Calendar /> &nbsp;{dateRange}&nbsp;
                     <Dropdown
@@ -104,39 +104,63 @@ const MainScreen = (props) => {
                         </div>
                     </Dropdown>
                 </p>
-            </div>
-            <div className='main-stats'>
-                <div className='main-stat-item'>
-                    <div className='main-stat-title'>
-                        Invitations sent
-                    </div>
-                    <div className='main-stat-text'>
-                        {stats.invitationsSent}
-                    </div>
-                </div>
-                <div className='main-stat-item'>
-                    <div className='main-stat-title'>
-                        Pending Invitations
-                    </div>
-                    <div className='main-stat-text'>
-                        {stats.pendingInvitations}
-                    </div>
-                </div>
-                <div className='main-stat-item'>
-                    <div className='main-stat-title'>
-                        Profile Views
-                    </div>
-                    <div className='main-stat-text'>
-                        {stats.profileViews}
-                    </div>
-                </div>
+            </div> */}
 
-            </div>
-            <br />
+            <Container>
+                <Row>
+                    <Col lg={6}>
+                        <h3 className='main-titlebar-title'>Campaign Analytics</h3>
+                    </Col>
+                    <Col lg={6}>
+                        <p className='main-titlebar-calendar'><Calendar /> &nbsp;{dateRange}&nbsp;
+                            <Dropdown
+                                menu={{
+                                    items,
+                                }}
+                                trigger={['click']}
+                            >
+                                <div onClick={(e) => e.preventDefault()}>
+                                    <ArrowSquareDown />
+                                </div>
+                            </Dropdown>
+                        </p>
+                    </Col>
+                </Row>
+            </Container>
+
+
+            <Container className='main-stats'>
+                <Row>
+                    <Col lg={3}>
+                        <div className='main-stat-title'>
+                            Invitations sent
+                        </div>
+                        <div className='main-stat-text'>
+                            {stats.invitationsSent}
+                        </div>
+                    </Col>
+                    <Col lg={3}>
+                        <div className='main-stat-title'>
+                            Pending Invitations
+                        </div>
+                        <div className='main-stat-text'>
+                            {stats.pendingInvitations}
+                        </div>
+                    </Col>
+                    <Col lg={3}>
+                        <div className='main-stat-title'>
+                            Profile Views
+                        </div>
+                        <div className='main-stat-text'>
+                            {stats.profileViews}
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
             <Container >
                 <Row>
                     <Col lg={1} />
-                    <Col lg={4} style={{ maxHeight: '300px' }}>
+                    <Col lg={4} md={8} style={{ maxHeight: '300px' }}>
                         <DoughnutGraph /><br />
                         <div className='legend-container'>
                             <div>
@@ -170,7 +194,7 @@ const MainScreen = (props) => {
 
                     </Col>
                     <Col lg={2} />
-                    <Col lg={4} style={{ maxHeight: '300px' }}>
+                    <Col lg={4} md={8} style={{ maxHeight: '300px' }}>
                         <SpiderGraph /><br />
                         <div className='legend-container'>
                             <div>
