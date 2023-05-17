@@ -99,7 +99,7 @@
     font-size: 16px;
 }
 
-.free-trial-inner-box h2{
+.free-trial-inner-box h2 {
     font-size: 28px;
 }
 
@@ -132,4 +132,32 @@
 
 .upgrade-btn:hover {
     cursor: pointer;
+}
+
+
+
+
+/* Small sidebar */
+.small-sidebar {
+    position: absolute;
+    text-align: center;
+    width: 5%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    color: white;
+    background: #131313;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Sulphur Point';
+    font-style: normal;
+}
+
+.menu-btn-active-small {
+    border-left: 5px solid #D4D4FC;
+    color: #D4D4FC;
+    /* padding-left: 28.5%; */
+}
+
+button:active, button:focus {
+    outline: none;
 }
