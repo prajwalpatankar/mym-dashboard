@@ -5,7 +5,7 @@ import MainScreen from './mainScreen/MainScreen';
 
 const Frame = (props) => {
     return (
-        <div>
+        <div >
             <Sidebar />
             <Navbar />
             <MainScreen />

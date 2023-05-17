@@ -176,3 +176,17 @@
         align-items: stretch;
     }
 }
+
+
+
+/* Smaller Screen */
+.main-screen-small {
+    position: absolute;
+    width: 47%;
+    height: 85%;
+    left: 53%;
+    top: 15%;
+    font-family: 'Sulphur Point';
+    font-style: normal;
+    overflow: hidden;
+}

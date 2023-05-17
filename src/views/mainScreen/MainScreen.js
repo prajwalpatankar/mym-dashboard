@@ -74,8 +74,22 @@ const MainScreen = (props) => {
         },
     ];
 
+    // handle smaller screens
+    const [smallWindow, setSmallWindow] = useState(window.innerWidth < 1100 ? true : false);
+
+    // dynamic MenuBar
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 1100) {
+                setSmallWindow(true);
+            } else {
+                setSmallWindow(false);
+            }
+        });
+    }, [])
+
     return (
-        <div className='main-screen'>
+        <div className={`main-screen${smallWindow ? '-small' : ''} `}>
             <div className='main-titlebar'>
                 <h3 className='main-titlebar-title'>Campaign Analytics</h3>
                 <p className='main-titlebar-calendar'><Calendar /> &nbsp;{dateRange}&nbsp;

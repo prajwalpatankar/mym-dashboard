@@ -5,6 +5,7 @@ import { Bar } from "react-chartjs-2";
 import Plot from 'react-plotly.js';
 
 import './Dashboard.css'
+import { Col, Container, Row } from 'react-bootstrap';
 // import { BarChart } from 'react-bootstrap-icons';
 
 const Dashboard = (props) => {
@@ -63,8 +64,22 @@ const Dashboard = (props) => {
   }, [stats])
 
 
+  // handle smaller screens
+  const [smallWindow, setSmallWindow] = useState(window.innerWidth < 1100 ? true : false);
+
+  // dynamic MenuBar
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 1100) {
+        setSmallWindow(true);
+      } else {
+        setSmallWindow(false);
+      }
+    });
+  }, [])
+
   return (
-    <div className='dashboard'>
+    <div className={`dashboard${smallWindow ? '-small' : ''} `} >
       <h2 className='dashboard-title'>Dashboard</h2>
       <div className='statistics'>
         <div className='stats-box'>
@@ -106,11 +121,26 @@ const Dashboard = (props) => {
         <Bar data={data} options={options} />
       </div>
       <div className='legend'>
-        <span className='legend-container'>
+        {/* <span className='legend-container'>
           <p className='legend-color-green'>&nbsp;</p> Connections
           <p className='legend-color-black'>&nbsp;</p> Follows
           <p className='legend-color-purple'>&nbsp;</p> Connect Invites
-        </span>
+        </span> */}
+        <Container>
+          <Row >
+            <Col lg={1} />
+            <Col lg={3} className='legend-container'>
+              <p className='legend-color-green'>&nbsp;</p> Connections
+            </Col>
+            <Col lg={3} className='legend-container'>
+              <p className='legend-color-black'>&nbsp;</p> Follows
+            </Col>
+            <Col lg={4} className='legend-container'>
+              <p className='legend-color-purple'>&nbsp;</p> Connect Invites
+            </Col>
+            <Col lg={1} />
+          </Row>
+        </Container>
       </div>
     </div>
   )

@@ -58,14 +58,28 @@ const Navbar = (props) => {
     // Notification items
     const content = (
         <div>
-          No new notifications!
+            No new notifications!
         </div>
-      );
+    );
+
+    // handle smaller screens
+    const [smallWindow, setSmallWindow] = useState(window.innerWidth < 1100 ? true : false);
+
+    // dynamic MenuBar
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 1100) {
+                setSmallWindow(true);
+            } else {
+                setSmallWindow(false);
+            }
+        });
+    }, [])
 
     return (
-        <div className='navbar'>
+        <div className={`navbar${smallWindow ? '-small' : ''} `}>
             <div className='left'>
-                <input className='search-bar' placeholder='Search' />
+                <input className={`search-bar${smallWindow ? '-small' : ''} `}  placeholder='Search' />
                 <SearchNormal1 className='search-icon' />
             </div>
             <div className='right'>
@@ -75,7 +89,7 @@ const Navbar = (props) => {
                     </Popover>
 
                     <img src={userData.profilePic} className='profile-pic' alt='profileImg'></img>
-                    <h4 className='profile-name'>{userData.name}</h4>
+                    <h4 className='profile-name' style={{display: smallWindow?'none':'block'}} >{userData.name}</h4>
 
                     <Dropdown
                         menu={{

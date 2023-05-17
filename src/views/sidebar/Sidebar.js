@@ -73,8 +73,8 @@ const Sidebar = (props) => {
   }
 
 
+  // handle smaller screens
   const [smallWindow, setSmallWindow] = useState(window.innerWidth < 1100 ? true : false);
-
 
   // dynamic MenuBar
   useEffect(() => {
@@ -152,7 +152,7 @@ const Sidebar = (props) => {
           <div className='sidebar'>
             <div className='main-logo'>
               <img src='/playground_assets/logo.png' alt='logo' className='logo' />
-              <p>Realply</p>
+              <p style={{marginTop: '25px'}}>Realply</p>
             </div>
 
             <div className='menu-group-1'>

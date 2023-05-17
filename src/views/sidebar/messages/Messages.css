@@ -9,6 +9,7 @@
 }
 
 .messages-title {
+    position: absolute;
     top: 6%;
     margin-left: 15%;
     font-size: 36px;
