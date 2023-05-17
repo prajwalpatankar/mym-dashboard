@@ -6,16 +6,20 @@ import { ArrowSquareDown, I3Square } from 'iconsax-react';
 
 const RecentActivity = (props) => {
 
-
+    // Storing types of activities to reuse
     const activityTypes = [
         'message',
         'connection request',
         'Upcoming Task -'
     ]
+
+    // Store activities
     const [activities, setActivities] = useState([])
 
 
     useEffect(() => {
+        // Some logic to get activity details and update state
+
         setActivities(
             [
                 {
@@ -52,8 +56,10 @@ const RecentActivity = (props) => {
     }, [activities])
 
 
+    // state to store period for activity
     const [activityPeriod, setActivityPeriod] = useState('Last 24h');
 
+    // Handling period change and updating list of activities
     const getActivityDetails = (period) => {
         //Some Logic / Request to get activity details of 'period'
         setActivityPeriod(period);

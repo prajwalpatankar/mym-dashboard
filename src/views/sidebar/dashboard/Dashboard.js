@@ -9,6 +9,7 @@ import './Dashboard.css'
 
 const Dashboard = (props) => {
 
+  // state to store stats
   const [stats, setStats] = useState({
     connections: 0,
     followers: 0,
@@ -18,9 +19,10 @@ const Dashboard = (props) => {
     invitesDelta: 0,
   })
 
+  // state to store data for the bar graph
   const [dataArr, setDataArr] = useState([]);
 
-
+  // bar graph initializer
   const data = {
     labels: ['Connections', 'Follows', 'Connect Invites'],
     datasets: [
@@ -32,6 +34,7 @@ const Dashboard = (props) => {
     ],
   };
 
+  // bar graph options
   const options = {
     responsive: true,
     scales: {
@@ -47,6 +50,7 @@ const Dashboard = (props) => {
   };
 
   useEffect(() => {
+    // Some logic to get stats and update bar graph state
     setStats({
       connections: 2632,
       followers: 2667,

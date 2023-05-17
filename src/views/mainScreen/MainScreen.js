@@ -10,6 +10,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 const MainScreen = (props) => {
 
+    // Storing campaign stats
     const [stats, setStats] = useState({
         invitationsSent: 0,
         pendingInvitations: 0,
@@ -17,6 +18,7 @@ const MainScreen = (props) => {
     })
 
     useEffect(() => {
+        // Some logic here to get campaign stats and update state
         setStats({
             invitationsSent: 286,
             pendingInvitations: 12,
@@ -27,13 +29,16 @@ const MainScreen = (props) => {
     }, [stats])
 
 
+    // Store data range for stats
     const [dateRange, setDateRange] = useState('Mar 10 - Apr 10');
 
+    // Handling Data change
     const getGraphDetails = (period) => {
         //Some Logic / Request to get activity details of 'period'
         setDateRange(period);
     }
 
+    // Items for dropdown for dates.
     const items = [
         {
             label: (
@@ -73,8 +78,6 @@ const MainScreen = (props) => {
         <div className='main-screen'>
             <div className='main-titlebar'>
                 <h3 className='main-titlebar-title'>Campaign Analytics</h3>
-                {/* <p className='main-titlebar-calendar'><Calendar /> &nbsp;{dateRange}&nbsp; <ArrowSquareDown /></p> */}
-
                 <p className='main-titlebar-calendar'><Calendar /> &nbsp;{dateRange}&nbsp;
                     <Dropdown
                         menu={{
@@ -120,7 +123,6 @@ const MainScreen = (props) => {
                 <Row>
                     <Col lg={1} />
                     <Col lg={4} style={{ maxHeight: '300px' }}>
-
                         <DoughnutGraph /><br />
                         <div className='legend-container'>
                             <div>

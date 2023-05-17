@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
 
 const SpiderGraph = (props) => {
@@ -8,19 +8,24 @@ const SpiderGraph = (props) => {
         const ctx = chartRef.current;
         let chartInstance = null;
 
+        // some logic to get graph data
+        let dataCampaign1 = [40, 70, 60, 50, 20, 80, 74];
+        let dataCampaign2 = [70, 30, 50, 35, 70, 60, 60];
+
+        // spider graph initializer
         const spiderData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [
                 {
                     label: 'Campaign 1',
-                    data: [40, 70, 60, 50, 20, 80, 74],
+                    data: dataCampaign1,
                     backgroundColor: '#C5C7F64D',
                     borderColor: '#C5C7F6',
                     borderWidth: 0.72071,
                 },
                 {
                     label: 'Campaign 2',
-                    data: [70, 30, 50, 35, 70, 60, 60],
+                    data: dataCampaign2,
                     backgroundColor: '#C2ECC14D',
                     borderColor: '#C2ECC1',
                     borderWidth: 0.72071,
@@ -28,6 +33,7 @@ const SpiderGraph = (props) => {
             ],
         };
 
+        // spidergraph options
         const spiderOptions = {
             responsive: true,
             maintainAspectRatio: false,

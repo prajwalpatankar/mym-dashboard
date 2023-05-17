@@ -6,6 +6,8 @@ import './Navbar.css'
 
 
 const Navbar = (props) => {
+
+    // Stre user details
     const [userData, setUserData] = useState({
         profilePic: "",
         name: ""
@@ -13,6 +15,8 @@ const Navbar = (props) => {
 
 
     useEffect(() => {
+        // Authentiction logic here.
+        // Update user details after auth
         setUserData({
             profilePic: "/playground_assets/ellipse41227-tjgn-200h.png",
             name: "Jacob Frost"
@@ -20,6 +24,7 @@ const Navbar = (props) => {
     }, [userData])
 
 
+    // Dropdown menu options
     const items = [
         {
             label: (
@@ -50,6 +55,7 @@ const Navbar = (props) => {
         },
     ];
 
+    // Notification items
     const content = (
         <div>
           No new notifications!
@@ -67,16 +73,6 @@ const Navbar = (props) => {
                     <Popover content={content} title="Notifications" trigger="click">
                         <button className='notification-btn'><NotificationBing size="20" /></button>
                     </Popover>
-                    {/* <Dropdown
-                        menu={{
-                            items,
-                        }}
-                        trigger={['click']}
-                    >
-                        <a onClick={(e) => e.preventDefault()}>
-                            <button className='notification-btn'><NotificationBing size="20" /></button>
-                        </a>
-                    </Dropdown> */}
 
                     <img src={userData.profilePic} className='profile-pic' alt='profileImg'></img>
                     <h4 className='profile-name'>{userData.name}</h4>

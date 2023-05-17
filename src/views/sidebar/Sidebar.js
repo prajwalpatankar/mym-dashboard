@@ -13,24 +13,27 @@ import { message } from 'antd';
 
 const Sidebar = (props) => {
 
+  // state to handle active component
   const [activeButton, setActiveButton] = useState('Dashboard');
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
   };
 
+  // state to calculate free trail days
   const [userDetails, setUserDetails] = useState({
     paidMember: false,
     daysLeft: 0
   })
 
   useEffect(() => {
-    // Check if user has a membership or on a free trial
+    // Check if user has a membership or on a free trial. OR some logic here to calculate free trial days
     setUserDetails({
       paidMember: false,
       daysLeft: 10
     });
   }, [userDetails])
 
+  // Dynamic components based on sidebar actions
   let result;
   switch (activeButton) {
     case 'Dashboard':
@@ -57,12 +60,14 @@ const Sidebar = (props) => {
   }
 
 
+  // Log out
   const handleLogOut = () => {
     handleButtonClick('Log Out');
     message.success("Successfully logged out");
     handleButtonClick('Dashboard');
   }
 
+  // Upgrade Membership
   const handleUpgrade = () => {
     message.info("Upgrade plans not available yet!")
   }
@@ -122,6 +127,7 @@ const Sidebar = (props) => {
           </button>
         </div>
 
+        {/* Check if user is paid member */}
         {userDetails.paidMember ?
           <></>
           :

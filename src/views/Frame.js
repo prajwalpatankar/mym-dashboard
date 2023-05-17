@@ -3,9 +3,6 @@ import Sidebar from './sidebar/Sidebar';
 import Navbar from './Navbar';
 import MainScreen from './mainScreen/MainScreen';
 
-
-// import './Frame.css'
-
 const Frame = (props) => {
     return (
         <div>

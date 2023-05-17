@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Static Dashboard for Realpy
+
+The project can be viewd live [here](https://mym-dashboard.vercel.app/) 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
