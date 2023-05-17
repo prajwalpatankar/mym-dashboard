@@ -2,7 +2,8 @@
 .sidebar {
     position: absolute;
     text-align: center;
-    width: 252px;
+    /* width: 252px; */
+    width: 17%;
     height: 100%;
     left: 0px;
     top: 0px;
@@ -60,7 +61,7 @@
     border: none;
     font-size: 18px;
     height: 40px;
-    padding-left: 60px;
+    padding-left: 30%;
     font-family: 'Sulphur Point';
     font-style: normal;
     margin-bottom: 5px;
@@ -74,7 +75,7 @@
 .menu-btn-active {
     border-left: 5px solid #D4D4FC;
     color: #D4D4FC;
-    padding-left: 55px;
+    padding-left: 28%;
 }
 
 

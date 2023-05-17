@@ -20,6 +20,8 @@ const MainScreen = (props) => {
             invitationsSent: 286,
             pendingInvitations: 12,
             profileViews: 2891,
+            campaign1: 12432,
+            campaign2: 12234,
         })
     }, [stats])
 
@@ -110,6 +112,57 @@ const MainScreen = (props) => {
                     <SpiderGraph />
                 </div>
             </div>
+            <div className='graph-legends'>
+                <div className='legend-container'>
+                    <div>
+                        <div className='legend-text'>
+                            <p className='legend-black'>&nbsp;</p>
+                            Invitations Sent
+                        </div>
+                        <div className='legend-number'>
+                            {stats.invitationsSent}
+                        </div>
+                    </div>
+                    <div>
+                        <div className='legend-text'>
+                            <p className='legend-green'>&nbsp;</p>
+                            Pending Invitations
+                        </div>
+                        <div className='legend-number'>
+                            {stats.pendingInvitations}
+                        </div>
+                    </div>
+                    <div>
+                        <div className='legend-text'>
+                            <p className='legend-purple'>&nbsp;</p>
+                            Profile Views
+                        </div>
+                        <div className='legend-number'>
+                            {stats.profileViews}
+                        </div>
+                    </div>
+                </div>
+                <div className='legend-container'>
+                    <div>
+                        <div className='legend-text'>
+                            <p className='legend-green-hollow'>&nbsp;</p>
+                            Campaign 1
+                        </div>
+                        <div className='legend-number'>
+                            {stats.campaign1}
+                        </div>
+                    </div>
+                    <div>
+                        <div className='legend-text'>
+                            <p className='legend-purple-hollow'>&nbsp;</p>
+                            Campaign 2
+                        </div>
+                        <div className='legend-number'>
+                            {stats.campaign2}
+                        </div>
+                    </div>
+                </div>
+            </div>
             <br />
             <div className='recent-activity-titlebar'>
                 <h3 className='recent-activity-title'>Recent Activity</h3>
@@ -121,7 +174,7 @@ const MainScreen = (props) => {
                         {activity.type === 0 ?
                             <div className='activity-list-item-inner'>
                                 <div className='activity-item-img' >
-                                    <img src={activity.icon} alt='profile'/>
+                                    <img src={activity.icon} alt='profile' />
                                 </div>
                                 <b>{activity.actor}</b>&nbsp;sent you a&nbsp;<b>{activityTypes[activity.type]}</b>.
                             </div>

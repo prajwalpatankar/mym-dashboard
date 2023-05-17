@@ -16,4 +16,4 @@ const Frame = (props) => {
     )
 }
 
-export default Frame;
+export default Frame;   

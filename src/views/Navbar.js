@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import {ArrowSquareDown, NotificationBing} from 'iconsax-react';
+import { ArrowSquareDown, NotificationBing, SearchNormal1 } from 'iconsax-react';
+import { Dropdown, Popover } from 'antd';
 
 import './Navbar.css'
-
-
 
 
 const Navbar = (props) => {
@@ -20,18 +19,79 @@ const Navbar = (props) => {
         })
     }, [userData])
 
+
+    const items = [
+        {
+            label: (
+                <a>
+                    Edit Profile
+                </a>
+            ),
+            key: '0',
+        },
+        {
+            label: (
+                <a>
+                    Switch Account
+                </a>
+            ),
+            key: '1',
+        },
+        {
+            type: 'divider',
+        },
+        {
+            label: (
+                <a>
+                    Log Out
+                </a>
+            ),
+            key: '2',
+        },
+    ];
+
+    const content = (
+        <div>
+          No new notifications!
+        </div>
+      );
+
     return (
         <div className='navbar'>
             <div className='left'>
-                <input className='search-bar' placeholder='Search'></input>
+                <input className='search-bar' placeholder='Search' />
+                <SearchNormal1 className='search-icon' />
             </div>
             <div className='right'>
                 <div className='profile-details'>
-                    <button className='notification-btn'><NotificationBing size="20" /></button>
+                    <Popover content={content} title="Notifications" trigger="click">
+                        <button className='notification-btn'><NotificationBing size="20" /></button>
+                    </Popover>
+                    {/* <Dropdown
+                        menu={{
+                            items,
+                        }}
+                        trigger={['click']}
+                    >
+                        <a onClick={(e) => e.preventDefault()}>
+                            <button className='notification-btn'><NotificationBing size="20" /></button>
+                        </a>
+                    </Dropdown> */}
+
                     <img src={userData.profilePic} className='profile-pic' alt='profileImg'></img>
                     <h4 className='profile-name'>{userData.name}</h4>
-                    {/* <button className='profile-actions'><img src='/playground_assets/down-icon.png' width='10px' style={{marginLeft: '-2px', marginTop: '3px'}} alt='aroow-down'></img></button> */}
-                    <button className='profile-actions'><ArrowSquareDown size="20" /></button>
+
+                    <Dropdown
+                        menu={{
+                            items,
+                        }}
+                        trigger={['click']}
+                    >
+                        <a onClick={(e) => e.preventDefault()}>
+                            <button className='profile-actions'><ArrowSquareDown size="20" /></button>
+                        </a>
+                    </Dropdown>
+
                 </div>
             </div>
         </div>

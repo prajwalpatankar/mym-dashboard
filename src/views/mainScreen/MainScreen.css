@@ -1,8 +1,9 @@
 .main-screen {
     position: absolute;
-    width: 63%;
+    width: 53%;
     height: 85%;
-    left: 692px;
+    /* left: 692px; */
+    left: 46%;
     top: 15%;
     font-family: 'Sulphur Point';
     font-style: normal;
@@ -23,8 +24,8 @@
 }
 
 .main-titlebar-calendar {
-    margin-left: 25%;
-    right: 60px;
+    position: absolute;
+    right: 4%;
     background-color: rgba(236, 236, 236, 0.5);
     display: flex;
     align-items: center;
@@ -58,11 +59,15 @@
 }
 
 
+
+
+
 .main-graphs {
     text-align: left;
     width: 20%;
     display: flex;
     align-items: center;
+    height: 37%;
 }
 
 .doughnut-graph {
@@ -73,6 +78,86 @@
     margin-left: 50%;
 }
 
+
+.graph-legends {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* text-align: center; */
+}
+
+.legend-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding-left: 15%;
+}
+
+.legend-text {
+    /* font-family: 'Roboto'; */
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8.64865px;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    color: rgba(0, 0, 0, 0.38);
+}
+
+.legend-black {
+    width: 5px;
+    height: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-color: #1F1F1F;
+}
+
+.legend-green {
+    width: 5px;
+    height: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-color: #C2ECC1;
+}
+
+.legend-purple {
+    width: 5px;
+    height: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-color: #C5C7F6;
+}
+
+.legend-green-hollow {
+    width: 5px;
+    height: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-color: #C2ECC14D;
+    border: 1px solid #C2ECC1;
+}
+
+.legend-purple-hollow {
+    width: 5px;
+    height: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-color: #C5C7F64D;
+    border: 1px solid #C5C7F6;
+}
+
+.legend-number {
+    /* font-family: 'Roboto'; */
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11.5315px;
+    margin-left: 16px;
+}
 
 
 
@@ -106,7 +191,7 @@
 
 .activity-list {
     width: 100%;
-    height: 295px;
+    height: 27%;
     overflow-y: scroll;
 }
 
@@ -157,4 +242,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+
+@media (max-width: 1200px) {
+    .main-titlebar {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }

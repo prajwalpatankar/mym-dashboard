@@ -1,10 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
-
 const SpiderGraph = (props) => {
-
-
     const chartRef = useRef(null);
 
     useEffect(() => {
@@ -34,8 +31,10 @@ const SpiderGraph = (props) => {
         const spiderOptions = {
             responsive: true,
             maintainAspectRatio: false,
-            legend: {
-                display: false, // Hide the legend
+            plugins: {
+                legend: {
+                    display: false,
+                },
             },
             scale: {
                 angleLines: {
@@ -60,10 +59,7 @@ const SpiderGraph = (props) => {
         };
     }, []);
 
-
-    return (
-        <canvas ref={chartRef} />
-    )
-}
+    return <canvas ref={chartRef} />;
+};
 
 export default SpiderGraph;
